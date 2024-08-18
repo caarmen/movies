@@ -19,6 +19,7 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import path
 
+from movies.views.full import full
 from movies.views.step1 import step1
 from movies.views.step2 import step2
 from movies.views.step3 import step3
@@ -28,4 +29,5 @@ urlpatterns = [
     path("step1/", step1),
     path("step2/", step2),
     path("step3/", step3),
+    path("full/", full),
 ] + debug_toolbar_urls()
