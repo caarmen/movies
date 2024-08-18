@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<h1>Movies</h1>
+
+<p>{{ movie_list |length}} movies.</p>
+{% for movie in movie_list %}
+  <h2>{{ movie.title}} ({{movie.release_year}})</h2>
+  <p>Budget: {{ movie.finance.budget | intcomma}} </p>
+  <p>Box office: {{ movie.finance.box_office | intcomma}} </p>
+  <hr>
+{% endfor %}
+{% endblock %}
