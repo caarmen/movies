@@ -1,0 +1,38 @@
+Table movies {
+  id integer [primary key]
+  title varchar
+  release_year integer 
+  studio_id integer
+}
+Table movie_finance {
+  movie_id integer [primary key]
+  budget float
+  box_office float
+}
+
+Table studios {
+  id integer [primary key]
+  name varchar
+}
+
+Table actors {
+  id integer [primary key]
+  first_name varchar
+  last_name varchar
+}
+
+Table movies_actors {
+  movie_id integer [primary key]
+  actor_id integer [primary key]
+}
+
+
+
+
+Ref: movies_actors.movie_id > movies.id
+Ref: movies_actors.actor_id > actors.id
+
+Ref: movies.studio_id > studios.id
+Ref: movie_finance.movie_id - movies.id
+
+

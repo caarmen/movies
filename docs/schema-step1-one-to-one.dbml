@@ -1,0 +1,13 @@
+Table movies {
+  id integer [primary key]
+  title varchar
+  release_year integer 
+}
+
+Table movie_finance {
+  movie_id integer [primary key]
+  budget float
+  box_office float
+}
+
+Ref: movie_finance.movie_id - movies.id 

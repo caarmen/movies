@@ -1,0 +1,15 @@
+Table movies {
+  id integer [primary key]
+  title varchar
+  release_year integer 
+  studio_id integer
+}
+
+Table studios {
+  id integer [primary key]
+  name varchar
+}
+
+Ref: movies.studio_id > studios.id
+
+
