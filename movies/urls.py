@@ -20,8 +20,10 @@ from django.contrib import admin
 from django.urls import path
 
 from movies.views.step1 import step1
+from movies.views.step2 import step2
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("step1/", step1),
+    path("step2/", step2),
 ] + debug_toolbar_urls()
