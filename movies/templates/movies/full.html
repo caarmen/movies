@@ -8,6 +8,7 @@
 
 <p>{{ movie_list |length}} movies.</p>
 {% for movie in movie_list %}
+<div class="movie">
   <h2>{{ movie.title}} ({{movie.release_year}})</h2>
   <p>Studio: {{ movie.studio.name }} </p>
   <p>Budget: {{ movie.finance.budget |intcomma }} </p>
@@ -18,6 +19,6 @@
     <li>{{actor.first_name}} {{actor.last_name}}</li>
 {% endfor %}
   </ul>
-  <hr>
+</div>
 {% endfor %}
 {% endblock %}
