@@ -1,13 +1,12 @@
 from django.shortcuts import render
-
 from movies.models import Movie
 
 
-def step2(request):
+def step3(request):
     # movies = Movie.objects.all()
-    movies = Movie.objects.all().select_related("studio")
+    movies = Movie.objects.prefetch_related("actor_set").all()
     context = {
         "movie_list": movies,
     }
 
-    return render(request, "movies/step2.html", context)
+    return render(request, "movies/step3.html", context)

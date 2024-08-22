@@ -16,9 +16,9 @@ Including another URLconf
 """
 
 from debug_toolbar.toolbar import debug_toolbar_urls
+
 from django.contrib import admin
 from django.urls import path
-
 from movies.views.full import full
 from movies.views.step1 import step1
 from movies.views.step2 import step2
