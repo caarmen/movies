@@ -6,6 +6,7 @@ from asgiref.sync import async_to_sync
 from flask_debugtoolbar import DebugToolbarExtension
 
 from flask import Flask
+from movies.commands import importcsv
 from movies.dbsession import db, sync_url
 
 
@@ -18,11 +19,14 @@ class MyDebugToolbarExtension(DebugToolbarExtension):
 
 
 def create_app():
+    from movies.views import full, step1, step2, step3
+
     app = Flask(
         __name__,
         static_folder="static",
         static_url_path="/static/",
     )
+    app.register_blueprint(importcsv.bp)
     logging.basicConfig()
     logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
     app.config["SECRET_KEY"] = "<replace with a secret key>"
