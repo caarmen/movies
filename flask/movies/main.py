@@ -27,6 +27,7 @@ def create_app():
         static_url_path="/static/",
     )
     app.register_blueprint(step1.bp)
+    app.register_blueprint(step2.bp)
     app.register_blueprint(importcsv.bp)
     logging.basicConfig()
     logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
