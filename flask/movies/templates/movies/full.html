@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<h1>Movies</h1>
+
+<p>{{ movie_list |length}} movies.</p>
+{% for movie in movie_list %}
+<div class="movie">
+  <h2>{{ movie.title}} ({{movie.release_year}})</h2>
+  <p>Studio: {{ movie.studio.name }} </p>
+  <p>Budget: {{ movie.finance.budget }} </p>
+  <p>Box office: {{ movie.finance.box_office }} </p>
+  <p>Actors:</p>
+  <ul>
+{% for actor in movie.actors %}
+    <li>{{actor.first_name}} {{actor.last_name}}</li>
+{% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% endblock %}

@@ -29,6 +29,7 @@ def create_app():
     app.register_blueprint(step1.bp)
     app.register_blueprint(step2.bp)
     app.register_blueprint(step3.bp)
+    app.register_blueprint(full.bp)
     app.register_blueprint(importcsv.bp)
     logging.basicConfig()
     logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
