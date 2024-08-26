@@ -13,5 +13,5 @@ class Movie(models.Model):
     )
     studio = models.ForeignKey(
         Studio,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
     )
