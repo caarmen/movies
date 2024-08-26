@@ -9,7 +9,7 @@ bp = Blueprint("full", __name__, url_prefix="/full")
 
 
 @bp.route("/async/nplus1", methods=("GET",))
-async def get_async_nplus1():
+async def async_nplus1():
     async with get_async_session() as session:
         movies = (await session.scalars(select(Movie))).all()
         for movie in movies:
@@ -23,7 +23,7 @@ async def get_async_nplus1():
 
 
 @bp.route("/async/optim", methods=("GET",))
-async def get_async_optim():
+async def async_optim():
     async with get_async_session() as session:
         movies = (
             (
@@ -45,7 +45,7 @@ async def get_async_optim():
 
 
 @bp.route("/sync/nplus1", methods=("GET",))
-def get_sync_nplus1():
+def sync_nplus1():
     movies = db.session.scalars(select(Movie)).all()
     return render_template(
         "movies/full.html",
@@ -54,7 +54,7 @@ def get_sync_nplus1():
 
 
 @bp.route("/sync/optim", methods=("GET",))
-def get_sync_optim():
+def sync_optim():
     movies = (
         db.session.scalars(
             select(Movie).options(

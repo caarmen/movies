@@ -11,11 +11,11 @@ from movies.dbsession import db
 @pytest.mark.parametrize(
     argnames=["route", "expected_sql_query_count"],
     argvalues=[
-        ("/step1/sync/nplus1", 11),
-        ("/step1/sync/optim", 1),
+        ("/onetoone/sync/nplus1", 11),
+        ("/onetoone/sync/optim", 1),
     ],
 )
-def test_step1(
+def test_onetoone(
     app: Flask,
     client: FlaskClient,
     captured_templates: list,
