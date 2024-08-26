@@ -18,7 +18,7 @@ class MyDebugToolbarExtension(DebugToolbarExtension):
         return processed_view
 
 
-def create_app():
+def create_app(db_url=sync_url):
     from movies.views import full, step1, step2, step3
 
     app = Flask(
@@ -35,7 +35,7 @@ def create_app():
     logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
     app.config["SECRET_KEY"] = "<replace with a secret key>"
     app.config["SQLALCHEMY_RECORD_QUERIES"] = True
-    app.config["SQLALCHEMY_DATABASE_URI"] = sync_url
+    app.config["SQLALCHEMY_DATABASE_URI"] = db_url
     db.init_app(app)
     MyDebugToolbarExtension(app)
     return app
