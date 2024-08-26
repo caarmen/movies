@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<h1>Studios</h1>
+
+<p>{{ studio_list |length}} studios.</p>
+{% for studio in studio_list %}
+<div class="movie">
+  <h2>{{ studio.name}}</h2>
+  <p>Movies:</p>
+  <ul>
+{% for movie in studio.movies %}
+    <li>{{movie.title}} {{movie.release_year}}</li>
+{% endfor %}
+  </ul>
+</div>
+{% endfor %}
+{% endblock %}

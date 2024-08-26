@@ -18,7 +18,9 @@ class Movie(Base, AsyncAttrs):
             ondelete="CASCADE",
         )
     )
-    studio: Mapped["Studio"] = relationship()
+    studio: Mapped["Studio"] = relationship(
+        back_populates="movies",
+    )
     actors: Mapped[list["Actor"]] = relationship(
         secondary=actor_movies_table,
         back_populates="movies",
