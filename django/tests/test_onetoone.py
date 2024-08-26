@@ -6,10 +6,19 @@ from movies.models.moviefinance import MovieFinance
 from movies.models.studio import Studio
 
 
+@pytest.mark.parametrize(
+    argnames=["route", "expected_sql_query_count"],
+    argvalues=[
+        ("/onetoone/nplus1/", 11),
+        ("/onetoone/optim/", 1),
+    ],
+)
 @pytest.mark.django_db
 def test_step1(
     client: Client,
     django_assert_num_queries,
+    route: str,
+    expected_sql_query_count: int,
 ):
 
     # Given some test data:
@@ -31,8 +40,8 @@ def test_step1(
 
     # When the page is requested:
 
-    with django_assert_num_queries(1):
-        response = client.get("/step1/")
+    with django_assert_num_queries(expected_sql_query_count):
+        response = client.get(route)
 
     # Then the expected data is returned.
     assert response.context["movie_list"].count() == 10
