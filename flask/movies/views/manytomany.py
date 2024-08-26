@@ -1,5 +1,5 @@
 from sqlalchemy import select
-from sqlalchemy.orm import joinedload
+from sqlalchemy.orm import selectinload
 
 from flask import Blueprint, render_template
 from movies.dbsession import db, get_async_session
@@ -24,7 +24,7 @@ async def async_nplus1():
 async def async_optim():
     async with get_async_session() as session:
         movies = (
-            (await session.scalars(select(Movie).options(joinedload(Movie.actors))))
+            (await session.scalars(select(Movie).options(selectinload(Movie.actors))))
             .unique()
             .all()
         )
@@ -48,7 +48,7 @@ def sync_optim():
     movies = (
         db.session.scalars(
             select(Movie).options(
-                joinedload(Movie.actors),
+                selectinload(Movie.actors),
             )
         )
         .unique()
