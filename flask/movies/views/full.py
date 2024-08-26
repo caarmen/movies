@@ -10,7 +10,7 @@ bp = Blueprint("full", __name__, url_prefix="/full")
 
 @bp.route("/async/nplus1", methods=("GET",))
 async def get_async_nplus1():
-    async with get_async_session()() as session:
+    async with get_async_session() as session:
         movies = (await session.scalars(select(Movie))).all()
         for movie in movies:
             await movie.awaitable_attrs.actors
@@ -24,7 +24,7 @@ async def get_async_nplus1():
 
 @bp.route("/async/optim", methods=("GET",))
 async def get_async_optim():
-    async with get_async_session()() as session:
+    async with get_async_session() as session:
         movies = (
             (
                 await session.scalars(

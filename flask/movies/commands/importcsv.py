@@ -13,7 +13,7 @@ bp = Blueprint("import", __name__)
 @bp.cli.command("csv")
 def import_movies():
     async def command():
-        async with get_async_session()() as session:
+        async with get_async_session() as session:
             # Delete all data
             await session.execute(delete(Movie))
             await session.execute(delete(MovieFinance))

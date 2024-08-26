@@ -8,7 +8,8 @@ def get_async_session() -> async_sessionmaker[AsyncSession]:
     url = "sqlite+aiosqlite:////tmp/movies.db"
     engine = create_async_engine(url)
     record_queries._listen(engine.sync_engine)
-    return async_sessionmaker(engine)
+    AsyncSessionMaker = async_sessionmaker(engine)
+    return AsyncSessionMaker()
 
 
 sync_url = "sqlite:////tmp/movies.db"
