@@ -8,7 +8,7 @@ from flask_debugtoolbar import DebugToolbarExtension
 from flask import Flask
 from movies.commands import importcsv
 from movies.dbsession import db, sync_url
-from movies.views import full, manytomany, onetomany, onetoone
+from movies.views import full, manytomany, manytoone, onetoone
 
 
 class MyDebugToolbarExtension(DebugToolbarExtension):
@@ -26,7 +26,7 @@ def create_app(db_url=sync_url):
         static_url_path="/static/",
     )
     app.register_blueprint(onetoone.bp)
-    app.register_blueprint(onetomany.bp)
+    app.register_blueprint(manytoone.bp)
     app.register_blueprint(manytomany.bp)
     app.register_blueprint(full.bp)
     app.register_blueprint(importcsv.bp)

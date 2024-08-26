@@ -19,14 +19,14 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 from django.contrib import admin
 from django.urls import path
-from movies.views import full, manytomany, onetomany, onetoone
+from movies.views import full, manytomany, manytoone, onetoone
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("onetoone/nplus1/", onetoone.nplus1),
     path("onetoone/optim/", onetoone.optim),
-    path("onetomany/nplus1/", onetomany.nplus1),
-    path("onetomany/optim/", onetomany.optim),
+    path("manytoone/nplus1/", manytoone.nplus1),
+    path("manytoone/optim/", manytoone.optim),
     path("manytomany/nplus1/", manytomany.nplus1),
     path("manytomany/optim/", manytomany.optim),
     path("full/nplus1/", full.nplus1),

@@ -8,7 +8,7 @@ def nplus1(request):
         "movie_list": movies,
     }
 
-    return render(request, "movies/onetomany.html", context)
+    return render(request, "movies/manytoone.html", context)
 
 
 def optim(request):
@@ -17,4 +17,4 @@ def optim(request):
         "movie_list": movies,
     }
 
-    return render(request, "movies/onetomany.html", context)
+    return render(request, "movies/manytoone.html", context)
