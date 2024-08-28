@@ -1,7 +1,7 @@
 import asyncio
 import csv
 
-from sqlalchemy import delete, select
+from sqlalchemy import delete, select, text
 
 from flask import Blueprint
 from movies.dbsession import get_async_session
@@ -15,6 +15,7 @@ def import_movies():
     async def command():
         async with get_async_session() as session:
             # Delete all data
+            await session.execute(text("pragma foreign_keys=on"))
             await session.execute(delete(Movie))
             await session.execute(delete(MovieFinance))
             await session.execute(delete(Studio))

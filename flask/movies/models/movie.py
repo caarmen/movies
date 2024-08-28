@@ -24,4 +24,5 @@ class Movie(Base, AsyncAttrs):
     actors: Mapped[list["Actor"]] = relationship(
         secondary=actor_movies_table,
         back_populates="movies",
+        cascade="all, delete",
     )
