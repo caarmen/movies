@@ -15,3 +15,5 @@ class Movie(models.Model):
         Studio,
         on_delete=models.PROTECT,
     )
+
+    # actor_set: related actors

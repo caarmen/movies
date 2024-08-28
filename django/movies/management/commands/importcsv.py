@@ -1,7 +1,7 @@
 import csv
 
 from django.core.management.base import BaseCommand
-from movies.models import Actor, Movie, MovieFinance, Studio
+from movies.models import Actor, Finance, Movie, Studio
 
 
 class Command(BaseCommand):
@@ -12,10 +12,10 @@ class Command(BaseCommand):
         Studio.objects.all().delete()
         Actor.objects.all().delete()
 
-        with open("data/studios.csv") as studios_file, open(
-            "data/actors.csv"
-        ) as actors_file, open("data/movies.csv") as movies_file, open(
-            "data/actor_movies.csv"
+        with open("../data/studios.csv") as studios_file, open(
+            "../data/actors.csv"
+        ) as actors_file, open("../data/movies.csv") as movies_file, open(
+            "../data/actor_movies.csv"
         ) as actor_movies_file:
             studios_reader = csv.DictReader(studios_file)
             actors_reader = csv.DictReader(actors_file)
@@ -35,7 +35,7 @@ class Command(BaseCommand):
                     studio=Studio.objects.get(name=movie_line["studio"]),
                 )
 
-                movie.finance = MovieFinance.objects.create(
+                movie.finance = Finance.objects.create(
                     movie=movie,
                     budget=float(movie_line["budget"]),
                     box_office=float(movie_line["box_office"]),
