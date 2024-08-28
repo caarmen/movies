@@ -23,7 +23,7 @@ if config.config_file_name is not None:
 from movies.models.base import Base
 from movies.models.movie import Movie
 from movies.models.studio import Studio
-from movies.models.moviefinance import MovieFinance
+from movies.models.finance import Finance
 from movies.models.actor import Actor
 from movies.models.actormovies import actor_movies_table
 target_metadata = Base.metadata

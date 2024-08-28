@@ -4,8 +4,8 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from movies.models.base import Base
 
 
-class MovieFinance(Base):
-    __tablename__ = "moviefinance"
+class Finance(Base):
+    __tablename__ = "finance"
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     budget: Mapped[float] = mapped_column()
     box_office: Mapped[float] = mapped_column()

@@ -11,7 +11,7 @@ class Movie(Base, AsyncAttrs):
     id: Mapped[int] = mapped_column(primary_key=True, index=True)
     title: Mapped[str] = mapped_column()
     release_year: Mapped[int] = mapped_column(SmallInteger())
-    finance: Mapped["MovieFinance"] = relationship(back_populates="movie")
+    finance: Mapped["Finance"] = relationship(back_populates="movie")
     studio_id: Mapped[int] = mapped_column(
         ForeignKey(
             "studios.id",

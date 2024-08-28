@@ -3,7 +3,7 @@ import pytest
 from flask import Flask
 from flask_sqlalchemy import record_queries
 from movies.models.movie import Movie
-from movies.models.moviefinance import MovieFinance
+from movies.models.finance import Finance
 from movies.models.studio import Studio
 from movies.dbsession import db
 
@@ -33,7 +33,7 @@ def test_onetoone(
                 studio=studio,
             )
 
-            finance = MovieFinance(
+            finance = Finance(
                 movie=movie,
                 budget=1234.0,
                 box_office=1234560.0,
