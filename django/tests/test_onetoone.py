@@ -1,5 +1,6 @@
 import pytest
 from django.test import Client
+from pytest_django import DjangoAssertNumQueries
 
 from movies.models.movie import Movie
 from movies.models.finance import Finance
@@ -16,7 +17,7 @@ from movies.models.studio import Studio
 @pytest.mark.django_db
 def test_one_to_one(
     client: Client,
-    django_assert_num_queries,
+    django_assert_num_queries: DjangoAssertNumQueries,
     route: str,
     expected_sql_query_count: int,
 ):
