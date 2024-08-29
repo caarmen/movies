@@ -17,8 +17,7 @@ def nplus1(request):
 
 def optim(request):
     movies = (
-        Movie.objects.select_related("studio")
-        .select_related("finance")
+        Movie.objects.select_related("studio", "finance")
         .prefetch_related("actor_set")
         .all()
     )
