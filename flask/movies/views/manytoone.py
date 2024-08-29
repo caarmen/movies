@@ -43,7 +43,13 @@ def sync_nplus1():
 
 @bp.route("/sync/optim", methods=("GET",))
 def sync_optim():
-    movies = db.session.scalars(select(Movie).options(joinedload(Movie.studio))).all()
+    movies = db.session.scalars(
+        select(Movie).options(
+            joinedload(
+                Movie.studio,
+            )
+        ),
+    ).all()
     return render_template(
         "movies/manytoone.html",
         movie_list=movies,
