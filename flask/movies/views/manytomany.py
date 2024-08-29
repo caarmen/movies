@@ -48,6 +48,7 @@ def sync_optim():
     movies = (
         db.session.scalars(
             select(Movie).options(
+                # joinedload(Movie.actors),
                 selectinload(Movie.actors),
             )
         )
