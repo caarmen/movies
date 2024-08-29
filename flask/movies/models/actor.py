@@ -12,5 +12,4 @@ class Actor(Base):
     movies: Mapped[list["Movie"]] = relationship(
         secondary=actor_movies_table,
         back_populates="actors",
-        cascade="all, delete",
     )
