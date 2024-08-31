@@ -16,4 +16,5 @@ class Movie(models.Model):
         on_delete=models.PROTECT,
     )
 
-    # actor_set: related actors
+    # finance: related Finance.
+    # actor_set: related Actors.
