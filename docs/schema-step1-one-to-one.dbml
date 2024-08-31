@@ -4,10 +4,10 @@ Table movies {
   release_year integer 
 }
 
-Table movie_finance {
+Table finance {
   movie_id integer [primary key]
   budget float
   box_office float
 }
 
-Ref: movie_finance.movie_id - movies.id 
+Ref: finance.movie_id - movies.id
