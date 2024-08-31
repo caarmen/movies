@@ -32,7 +32,7 @@ def create_app(db_url=sync_url):
     app.register_blueprint(full.bp)
     app.register_blueprint(importcsv.bp)
     logging.basicConfig()
-    logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+    logging.getLogger("sqlalchemy.engine").setLevel(logging.DEBUG)
     app.config["SECRET_KEY"] = "<replace with a secret key>"
     app.config["SQLALCHEMY_RECORD_QUERIES"] = True
     app.config["SQLALCHEMY_DATABASE_URI"] = db_url
