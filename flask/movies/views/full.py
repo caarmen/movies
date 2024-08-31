@@ -58,9 +58,9 @@ def sync_optim():
     movies = (
         db.session.scalars(
             select(Movie).options(
-                selectinload(Movie.actors),
                 joinedload(Movie.studio),
                 joinedload(Movie.finance),
+                selectinload(Movie.actors),
             )
         )
         .unique()
