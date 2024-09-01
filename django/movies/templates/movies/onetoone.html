@@ -10,8 +10,8 @@
 {% for movie in movie_list %}
 <div class="movie">
     <h2>{{ movie.title}} ({{movie.release_year}})</h2>
-    <p>Budget: {{ movie.finance.budget | intcomma}} </p>
-    <p>Box office: {{ movie.finance.box_office | intcomma}} </p>
+    <p>Budget: ${{ movie.finance.budget | intcomma}} </p>
+    <p>Box office: ${{ movie.finance.box_office | intcomma}} </p>
 </div>
 {% endfor %}
 {% endblock %}
