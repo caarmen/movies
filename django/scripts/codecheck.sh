@@ -1,3 +1,5 @@
+#!/bin/bash
+
 error=0
 for project in movies
 do

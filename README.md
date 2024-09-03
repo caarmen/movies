@@ -8,9 +8,9 @@ Create separate virtual environments for the django and flask subprojects.
 
 For each of them:
 * install dependencies with `pip install -r requirements/dev.txt`.
-* Prepare the database with `bash scripts/prepare_db.sh`.
-* Import the test data with `bash scripts/import_data.sh`.
-* Run the server with `bash scripts/run_server.sh`.
+* Prepare the database with `scripts/prepare_db.sh`.
+* Import the test data with `scripts/import_data.sh`.
+* Run the server with `scripts/run_server.sh`.
 
 ## Pages
 
@@ -80,5 +80,5 @@ The following pages are available.
 
 ## Tests
 
-Tests can be run with `bash scripts/run_tests.sh`, in each project.
+Tests can be run with `scripts/run_tests.sh`, in each project.
 
