@@ -2,6 +2,11 @@
 
 The purpose of this project is to explore some query optimizations for different types of database relationships, comparing Django and Flask/SQLAlchemy.
 
+## Presentation slides
+Slides from the PyCon France 2024 (Strasbourg) presentation:
+* [Google slides](https://docs.google.com/presentation/d/1kyjjEuIE3h_NPaVvrsx1MtsdXrAHGTmi-EUxq25dSCE/edit?usp=sharing)
+* [Powerpoint](docs/slides-pycon-france-2024.pptx)
+
 ## Setup
 
 Create separate virtual environments for the django and flask subprojects.
