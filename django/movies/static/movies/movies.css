@@ -3,6 +3,7 @@
     --surface-color: #fff;
     --surface-hover-color: #f8f8f8;
     --primary-text-color: #333;
+    --secondary-text-color: #777;
     --accent-color: #2980b9;
 }
 /* General page styling */
@@ -42,6 +43,9 @@ p {
     width: 480px;
     margin-left: auto;
     margin-right: auto;
+}
+.money {
+    color: var(--secondary-text-color);
 }
 
 .movie:hover {
