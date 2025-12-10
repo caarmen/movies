@@ -12,15 +12,25 @@
     --dark-primary-text-color: #e6e6e6;
     --dark-secondary-text-color: #999;
     --dark-accent-color: #62aae8;
+}
+:root[data-theme="light"] {
+    color-scheme: light;
+    --background-color: var(--light-background-color);
+    --surface-color: var(--light-surface-color);
+    --surface-hover-color: var(--light-surface-hover-color);
+    --primary-text-color: var(--light-primary-text-color);
+    --secondary-text-color: var(--light-secondary-text-color);
+    --accent-color: var(--light-accent-color);
+}
 
-    --background-color: light-dark(var(--light-background-color),var(--dark-background-color));
-    --surface-color: light-dark(var(--light-surface-color),var(--dark-surface-color));
-    --surface-hover-color: light-dark(var(--light-surface-hover-color),var(--dark-surface-hover-color));
-    --primary-text-color: light-dark(var(--light-primary-text-color),var(--dark-primary-text-color));
-    --secondary-text-color: light-dark(var(--light-secondary-text-color),var(--dark-secondary-text-color));
-    --accent-color: light-dark(var(--light-accent-color),var(--dark-accent-color));
-
-    color-scheme: light dark;
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --background-color: var(--dark-background-color);
+    --surface-color: var(--dark-surface-color);
+    --surface-hover-color: var(--dark-surface-hover-color);
+    --primary-text-color: var(--dark-primary-text-color);
+    --secondary-text-color: var(--dark-secondary-text-color);
+    --accent-color: var(--dark-accent-color);
 }
 /* General page styling */
 body {
@@ -72,6 +82,15 @@ p {
 
 .page-title, .movie-count {
     text-align: center;
+}
+
+.theme-toggle {
+    border: none;
+    background-color: var(--surface-color);
+    cursor: pointer;
+}
+.theme-toggle:hover {
+    background-color: var(--surface-hover-color)
 }
 
 

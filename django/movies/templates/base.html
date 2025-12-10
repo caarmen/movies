@@ -3,8 +3,10 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'movies/movies.css' %}" />
+    <script src="{% static 'movies/movies.js' %}" ></script>
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙 / ☀️</button>
     {% block content %}{% endblock %}
 </body>
 </html>
