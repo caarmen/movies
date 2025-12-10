@@ -1,10 +1,26 @@
 :root {
-    --background-color: #f4f4f4;
-    --surface-color: #fff;
-    --surface-hover-color: #f8f8f8;
-    --primary-text-color: #333;
-    --secondary-text-color: #777;
-    --accent-color: #2980b9;
+    --light-background-color: #f4f4f4;
+    --light-surface-color: #fff;
+    --light-surface-hover-color: #f8f8f8;
+    --light-primary-text-color: #333;
+    --light-secondary-text-color: #777;
+    --light-accent-color: #2980b9;
+
+    --dark-background-color: #121212;
+    --dark-surface-color: #1e1e1e;
+    --dark-surface-hover-color: #2a2a2a;
+    --dark-primary-text-color: #e6e6e6;
+    --dark-secondary-text-color: #999;
+    --dark-accent-color: #62aae8;
+
+    --background-color: light-dark(var(--light-background-color),var(--dark-background-color));
+    --surface-color: light-dark(var(--light-surface-color),var(--dark-surface-color));
+    --surface-hover-color: light-dark(var(--light-surface-hover-color),var(--dark-surface-hover-color));
+    --primary-text-color: light-dark(var(--light-primary-text-color),var(--dark-primary-text-color));
+    --secondary-text-color: light-dark(var(--light-secondary-text-color),var(--dark-secondary-text-color));
+    --accent-color: light-dark(var(--light-accent-color),var(--dark-accent-color));
+
+    color-scheme: light dark;
 }
 /* General page styling */
 body {
