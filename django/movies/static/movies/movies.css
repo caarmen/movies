@@ -24,6 +24,7 @@ p {
     line-height: 1.5;
 }
 
+
 /* Container for each movie */
 .movie {
     background-color: #fff;
@@ -35,6 +36,11 @@ p {
     margin-left: auto;
     margin-right: auto;
 }
+
+.page-title, .movie-count {
+    text-align: center;
+}
+
 
 /* Styling for the list of actors */
 ul {
