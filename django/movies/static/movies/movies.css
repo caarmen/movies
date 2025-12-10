@@ -1,8 +1,15 @@
+:root {
+    --background-color: #f4f4f4;
+    --surface-color: #fff;
+    --surface-hover-color: #f8f8f8;
+    --primary-text-color: #333;
+    --accent-color: #2980b9;
+}
 /* General page styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
     margin: 0;
     padding: 20px;
 }
@@ -10,9 +17,9 @@ body {
 /* Styling for movie titles */
 h2 {
     font-size: 24px;
-    color: #2c3e50;
+    color: var(--accent-color);
     margin-bottom: 10px;
-    border-bottom: 2px solid #2980b9;
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 5px;
 }
 
@@ -27,7 +34,7 @@ p {
 
 /* Container for each movie */
 .movie {
-    background-color: #fff;
+    background-color: var(--surface-color);
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 5px;
@@ -38,7 +45,7 @@ p {
 }
 
 .movie:hover {
-    background-color: #f8f8f8;
+    background-color: var(--surface-hover-color);
     scale: 1.05;
     transition: scale 0.2s;
 }
