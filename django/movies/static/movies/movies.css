@@ -37,6 +37,12 @@ p {
     margin-right: auto;
 }
 
+.movie:hover {
+    background-color: #f8f8f8;
+    scale: 1.05;
+    transition: scale 0.2s;
+}
+
 .page-title, .movie-count {
     text-align: center;
 }
